@@ -1,13 +1,18 @@
-To start mongodb: 
-
-$mongod --dbpath data/db
+1.Make sure u have installed mongodb-server in your system.
+   	If on ubuntu :
+		sudo apt-get install mongodb-server	
+2.To start mongodb: in background preferably.
+	$mongod --dbpath data/db &
  
-To enter data to db directly:
-
+3.To enter data to db directly:
+a.
 $mongo 
-
 > use ldapDB
-
+b.
+first check if there are any users.
+To list 
+> db.users.find().pretty()
+c. insert through.
 > db.users.insert({'username':'foo',
 		'password':'foo',
 		'email': 'email'
@@ -18,8 +23,6 @@ $mongo
 		'home directory':'home dir'})
 
 
-To list all users
 
-> db.users.find().pretty()
 
 
